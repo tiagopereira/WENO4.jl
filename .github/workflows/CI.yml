@@ -28,12 +28,8 @@ jobs:
         arch:
           - x64
           - x86
-          - arm64
         exclude:
-          - {os: windows-latest, arch: arm64}
           - {os: macOS-latest, arch: x86}    
-          - {version: '1.0', arch: arm64}
-          - {version: '1.6', arch: arm64}
     steps:
       - uses: actions/checkout@v2
       - uses: julia-actions/setup-julia@v1
