@@ -43,6 +43,7 @@ function interpolate_weno4(
 )
     Ngrid = length(xp)
     result = similar(xs)
+    ε = 1.0f-6
     prevβ = -1
     β2 = zero(eltype(fp))
     β3 = zero(eltype(fp))
@@ -136,7 +137,6 @@ Compute the smoothness indicators β2 and β3 for 4th order WENO interpolation.
 Arguments are the x and y values for the 4-point stencil.
 """
 function weno4_β(xim, xi, xip, xipp, yim, yi, yip, yipp)
-    ε = 1.0f-6
     him = xi - xim
     hi = xip - xi
     hip = xipp - xip
