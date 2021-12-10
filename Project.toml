@@ -1,0 +1,13 @@
+name = "WENO4"
+uuid = "92e69b6b-b976-4d9c-9029-10b5a528961a"
+authors = ["Tiago M. D. Pereira"]
+version = "0.1.0"
+
+[compat]
+julia = "0.6"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
