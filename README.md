@@ -25,7 +25,7 @@ xp = 1:0.2:5
 f(x) = log(x)
 fp = f.(xp)
 ```
-Interpolate to a new set of points xs:
+Interpolate to a new set of points `xs`:
 ```julia
 xs = [1.1, 2.1, 3.1, 4.1]
 result = interpolate_weno4(xs, xp, fp)
