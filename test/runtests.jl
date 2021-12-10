@@ -22,6 +22,7 @@ using Test
     new_y = interpolate_weno4(new_x, x, y)
     @test maximum(new_y) <= maximum(y)
     @test minimum(new_y) >= minimum(y)
+    a = 1:0.1:2
     @test WENO4.binary_search(a, 1.25) == findfirst(x -> x>1.25, a) - 1
     @test WENO4.weno4_q(1, 1, 2, 3, 4, 1, 2.5, 3.5, 4.5) == (1.0, 1.5)
     @test WENO4.weno4_q(1, 1, 2, 3, 4, 0, 0, 0, 0) == (0.0, 0.0)
