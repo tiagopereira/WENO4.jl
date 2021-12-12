@@ -41,7 +41,7 @@ The following comparison shows how WENO4 performs compared with linear and Monot
 
 WENO4's performance is very competitive, especially for irregular grids where it performs in many cases as fast as linear interpolation from Interpolations.jl. The following table shows some benchmarks comparing the times of different interpolation methods for different numbers of randomly-spaced input nodes (`Npoints`) and equidistant points to interpolate (`Ninterp`):
 
-| `Npoints` | `Ninterp` | Linear | WENO4 | Monotonic | Spline |
+| `Npoints` | `Ninterp` | Linear | WENO4 | Monotonic | Cubic spline |
 |----:|----:|----:|----:|----:|----:|
 | 10 | 10 | 0.21 | 0.09 | 0.18 | 0.69 |
 | 10 | 100 | 0.44 | 0.55 | 0.67 | 1.54 |
@@ -50,4 +50,4 @@ WENO4's performance is very competitive, especially for irregular grids where it
 | 500 | 500 | 4.50 | 7.43 | 10.90 | 26.41 |
 | 500 | 10000 | 83.60 | 90.00 | 121.49 | 141.00 |
 
-The times were normalised to the linear interpolation times for the case of `(Npoints=100, Ninterp=100)`. Linear interpolation was performed using Interpolations.jl. Monotonic interpolation was performed using Interpolations.jl, using `SteffenMonotonicInterpolation`. Spline interpolation was performed with a cubic spline using Dierckx.jl. All timings include the creation of an interpolant and performing the interpolation at the required points. 
+The times were normalised to the linear interpolation times for the case of `(Npoints=100, Ninterp=100)`. Linear interpolation was performed using Interpolations.jl. Monotonic interpolation was performed using Interpolations.jl, using `SteffenMonotonicInterpolation`. Cubic spline interpolation was performed using Dierckx.jl. All timings include the creation of an interpolant and performing the interpolation at the required points. 
