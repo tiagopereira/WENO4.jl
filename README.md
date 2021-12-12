@@ -33,13 +33,13 @@ result = interpolate_weno4(xs, xp, fp)
 
 ## Example results
 
-The following comparison shows how WENO4 performs compared with linear and Monotonic interpolation (from [Interpolations.jl](https://github.com/JuliaMath/Interpolations.jl)) and a cubic spline (from [Dierckx.jl](https://github.com/kbarbary/Dierckx.jl) for different functions randomly sampled at 17 points.
+The following comparison shows how WENO4 performs compared with linear and Monotonic interpolation (from [Interpolations.jl](https://github.com/JuliaMath/Interpolations.jl)) and a cubic spline (from [Dierckx.jl](https://github.com/kbarbary/Dierckx.jl)) for different functions randomly sampled at 17 points.
 
 ![interpolation examples](docs/src/assets/comparison_plots.png)
 
 ## Performance
 
-WENO4's performance is very competitive, especially for irregular grids where it performs in many cases as fast as linear interpolation from Interpolations.jl. The following table shows some benchmarks comparing the times of different interpolation methods for different numbers of randomly-spaced input nodes (`Npoints`) and equidistant points to interpolate (`Ninterp`):
+WENO4's performance is very competitive, especially for irregular grids where it performs in many cases as fast as linear interpolation from Interpolations.jl. The following table shows some benchmarks comparing the median times of different interpolation methods for different numbers of randomly-spaced input nodes (`Npoints`) and equidistant points to interpolate (`Ninterp`):
 
 | `Npoints` | `Ninterp` | Linear | WENO4 | Monotonic | Cubic spline |
 |----:|----:|----:|----:|----:|----:|
